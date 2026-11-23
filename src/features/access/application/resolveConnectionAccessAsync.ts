@@ -1,9 +1,9 @@
-import { evaluateConnectionAccess } from '../domain/evaluateConnectionAccess.js';
 import type {
   ConnectionAccessDecision,
   ConnectionRepositoryPort,
   ConnectionRequirement,
 } from '../../../types/connection.js';
+import { evaluateConnectionAccess } from '../domain/evaluateConnectionAccess.js';
 
 /*** Resolve connection metadata through a host port and evaluate requested access. */
 export const resolveConnectionAccessAsync = async (

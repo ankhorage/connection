@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'bun:test';
+
 import {
-  evaluateConnectionAccess,
-  resolveConnectionAccessAsync,
   type ConnectionDescriptor,
   type ConnectionRepositoryPort,
+  evaluateConnectionAccess,
+  resolveConnectionAccessAsync,
 } from './index.js';
 
 const connected: ConnectionDescriptor = {
@@ -15,14 +16,18 @@ const connected: ConnectionDescriptor = {
   authorizationRef: 'vault:connection-1',
 };
 
-describe('connection access', () => {
+describe('connection access eligibility', () => {
   it('grants matching active connections and required scopes', () => {
-    expect(evaluateConnectionAccess(connected, { provider: 'linkedin', scopes: ['post:write'] })).toEqual({
+    expect(
+      evaluateConnectionAccess(connected, { provider: 'linkedin', scopes: ['post:write'] }),
+    ).toEqual({
       granted: true,
       connection: connected,
     });
   });
+});
 
+describe('connection access denials', () => {
   it('fails closed when the connection is absent', () => {
     expect(evaluateConnectionAccess(null, { provider: 'linkedin', scopes: [] })).toEqual({
       granted: false,
@@ -38,7 +43,9 @@ describe('connection access', () => {
   });
 
   it.each(['disconnected', 'expired', 'revoked'] as const)('rejects %s connections', (status) => {
-    expect(evaluateConnectionAccess({ ...connected, status }, { provider: 'linkedin', scopes: [] })).toEqual({
+    expect(
+      evaluateConnectionAccess({ ...connected, status }, { provider: 'linkedin', scopes: [] }),
+    ).toEqual({
       granted: false,
       reason: 'inactive',
     });
@@ -46,7 +53,10 @@ describe('connection access', () => {
 
   it('rejects missing authorization references', () => {
     expect(
-      evaluateConnectionAccess({ ...connected, authorizationRef: '  ' }, { provider: 'linkedin', scopes: [] }),
+      evaluateConnectionAccess(
+        { ...connected, authorizationRef: '  ' },
+        { provider: 'linkedin', scopes: [] },
+      ),
     ).toEqual({ granted: false, reason: 'authorization-unavailable' });
   });
 
@@ -62,16 +72,24 @@ describe('connection access', () => {
       missingScopes: ['message:write', 'profile:read'],
     });
   });
+});
 
+describe('connection access resolution', () => {
   it('resolves through the supplied repository rather than global state', async () => {
     const repository: ConnectionRepositoryPort = {
-      loadAsync: async (id) => (id === connected.id ? connected : null),
+      loadAsync: (id) => Promise.resolve(id === connected.id ? connected : null),
     };
     expect(
-      await resolveConnectionAccessAsync(repository, connected.id, { provider: 'linkedin', scopes: [] }),
+      await resolveConnectionAccessAsync(repository, connected.id, {
+        provider: 'linkedin',
+        scopes: [],
+      }),
     ).toEqual({ granted: true, connection: connected });
     expect(
-      await resolveConnectionAccessAsync(repository, 'unknown', { provider: 'linkedin', scopes: [] }),
+      await resolveConnectionAccessAsync(repository, 'unknown', {
+        provider: 'linkedin',
+        scopes: [],
+      }),
     ).toEqual({ granted: false, reason: 'not-found' });
   });
 });

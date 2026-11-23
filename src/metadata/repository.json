@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "kind": "library",
+  "title": "@ankhorage/connection",
+  "summary": "Provider-neutral connection metadata and access eligibility for external accounts.",
+  "purpose": "Give applications a credential-free, provider-isolated boundary for deciding whether an existing external connection meets requested provider and scope requirements."
+}
