@@ -1,7 +1,7 @@
 {
   "name": "@ankhorage/connection",
   "version": "0.0.0",
-  "description": "todo",
+  "description": "Provider-neutral connection metadata and access eligibility for external accounts.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,8 @@
   },
   "keywords": [
     "ankhorage",
-    "adapter"
+    "connection",
+    "authorization"
   ],
   "files": [
     "dist",
