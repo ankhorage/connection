@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant participant_evaluateConnectionAccess as evaluateConnectionAccess
+  participant participant_loadAsync as loadAsync
+  participant participant_resolveConnectionAccessAsync as resolveConnectionAccessAsync
+  participant_resolveConnectionAccessAsync->>participant_evaluateConnectionAccess: evaluateConnectionAccess()
+  participant_evaluateConnectionAccess-->>participant_resolveConnectionAccessAsync: return
+  participant_resolveConnectionAccessAsync->>participant_loadAsync: repository.loadAsync()
+  participant_loadAsync-->>participant_resolveConnectionAccessAsync: return

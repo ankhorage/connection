@@ -1,4 +1,10 @@
 graph LR
+  module_src_features_access_application_resolveConnectionAccessAsync_ts["src/features/access/application/resolveConnectionAccessAsync.ts"]
+  module_src_features_access_domain_evaluateConnectionAccess_ts["src/features/access/domain/evaluateConnectionAccess.ts"]
   module_src_index_test_ts["src/index.test.ts"]
   module_src_index_ts["src/index.ts"]
-  module_src_index_test_ts -.-> module_src_index_ts
+  module_src_types_connection_ts["src/types/connection.ts"]
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --> module_src_features_access_domain_evaluateConnectionAccess_ts
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --> module_src_types_connection_ts
+  module_src_features_access_domain_evaluateConnectionAccess_ts --> module_src_types_connection_ts
+  module_src_index_test_ts --> module_src_index_ts

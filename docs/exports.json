@@ -1,21 +1,237 @@
 [
   {
-    "name": "default",
+    "name": "ConnectionAccessDecision",
     "title": null,
-    "description": null,
+    "description": "A fail-closed eligibility result; it does not itself authorize a provider API call.",
     "isReadme": false,
     "see": [],
     "security": [],
     "kind": "unknown",
-    "modulePath": "src/index.ts",
+    "modulePath": "src/types/connection.ts",
     "sourceLocation": {
-      "filePath": "src/index.ts",
-      "line": 1,
+      "filePath": "src/types/connection.ts",
+      "line": 19,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
     "relatedSymbols": [],
     "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "ConnectionDescriptor",
+    "title": null,
+    "description": "A credential-free view of an account linked through an external authorization owner.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/connection.ts",
+    "sourceLocation": {
+      "filePath": "src/types/connection.ts",
+      "line": 2,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "accountId",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "authorizationRef",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "id",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "provider",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "scopes",
+        "kind": "property",
+        "type": "readonly string[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "status",
+        "kind": "property",
+        "type": "\"connected\" | \"disconnected\" | \"expired\" | \"revoked\"",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "ConnectionRepositoryPort",
+    "title": null,
+    "description": "Host-owned, read-only persistence boundary; credentials stay outside this package.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/connection.ts",
+    "sourceLocation": {
+      "filePath": "src/types/connection.ts",
+      "line": 33,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["ConnectionDescriptor"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "loadAsync",
+        "kind": "property",
+        "type": "(connectionId: string) => Promise<ConnectionDescriptor | null>",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "ConnectionRequirement",
+    "title": null,
+    "description": "Requirements for using an existing external connection.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/connection.ts",
+    "sourceLocation": {
+      "filePath": "src/types/connection.ts",
+      "line": 13,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "provider",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "scopes",
+        "kind": "property",
+        "type": "readonly string[]",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "evaluateConnectionAccess",
+    "title": null,
+    "description": "Evaluate an existing connection without fetching or exposing credentials.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "value",
+    "modulePath": "src/features/access/domain/evaluateConnectionAccess.ts",
+    "sourceLocation": {
+      "filePath": "src/features/access/domain/evaluateConnectionAccess.ts",
+      "line": 8,
+      "column": 14
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["ConnectionAccessDecision", "ConnectionDescriptor", "ConnectionRequirement"],
+    "signatures": [
+      {
+        "label": "(connection: ConnectionDescriptor | null, requirement: ConnectionRequirement) => ConnectionAccessDecision",
+        "parameters": [
+          {
+            "name": "connection",
+            "type": "ConnectionDescriptor | null",
+            "required": true,
+            "description": null
+          },
+          {
+            "name": "requirement",
+            "type": "ConnectionRequirement",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "ConnectionAccessDecision",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "resolveConnectionAccessAsync",
+    "title": null,
+    "description": "Resolve connection metadata through a host port and evaluate requested access.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "value",
+    "modulePath": "src/features/access/application/resolveConnectionAccessAsync.ts",
+    "sourceLocation": {
+      "filePath": "src/features/access/application/resolveConnectionAccessAsync.ts",
+      "line": 9,
+      "column": 14
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [
+      "ConnectionAccessDecision",
+      "ConnectionRepositoryPort",
+      "ConnectionRequirement"
+    ],
+    "signatures": [
+      {
+        "label": "(repository: ConnectionRepositoryPort, connectionId: string, requirement: ConnectionRequirement) => Promise<ConnectionAccessDecision>",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "type": "string",
+            "required": true,
+            "description": null
+          },
+          {
+            "name": "repository",
+            "type": "ConnectionRepositoryPort",
+            "required": true,
+            "description": null
+          },
+          {
+            "name": "requirement",
+            "type": "ConnectionRequirement",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "Promise<ConnectionAccessDecision>",
+        "returnDescription": null
+      }
+    ],
     "members": [],
     "structuredRows": []
   }

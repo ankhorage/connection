@@ -3,7 +3,11 @@
 
 # @ankhorage/connection
 
-![license: MIT](././docs/badges/license.svg) ![npm: v0.0.0](././docs/badges/npm.svg) ![runtime: bun](././docs/badges/runtime.svg) ![typescript: strict](././docs/badges/typescript.svg) ![eslint: checked](././docs/badges/eslint.svg) ![prettier: checked](././docs/badges/prettier.svg) ![build: checked](././docs/badges/build.svg) ![tests: configured](././docs/badges/tests.svg) ![paradox: canonical](././docs/badges/docs.svg)
+![license: MIT](././docs/badges/license.svg) ![npm: v0.1.0](././docs/badges/npm.svg) ![runtime: bun](././docs/badges/runtime.svg) ![typescript: strict](././docs/badges/typescript.svg) ![eslint: checked](././docs/badges/eslint.svg) ![prettier: checked](././docs/badges/prettier.svg) ![build: checked](././docs/badges/build.svg) ![tests: configured](././docs/badges/tests.svg) ![paradox: canonical](././docs/badges/docs.svg)
+
+Provider-neutral connection metadata and access eligibility for external accounts.
+
+Give applications a credential-free, provider-isolated boundary for deciding whether an existing external connection meets requested provider and scope requirements.
 
 ## Documentation
 
@@ -12,19 +16,6 @@ Open `./docs/index.html` locally in your browser to browse the complete document
 ## Contributors
 
 <!-- readme: contributors -start -->
-<table>
-	<tbody>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/artiphishle">
-                    <img src="https://avatars.githubusercontent.com/u/137318798?v=4" width="100;" alt="artiphishle"/>
-                    <br />
-                    <sub><b>Fabio Gartenmann</b></sub>
-                </a>
-            </td>
-		</tr>
-	<tbody>
-</table>
 <!-- readme: contributors -end -->
 
 ## Donation

@@ -185,8 +185,11 @@
       <aside class="sidebar">
         <p class="muted">Generated with Paradox</p>
         <h1>@ankhorage/connection</h1>
-        <p></p>
-
+        <p>Provider-neutral connection metadata and access eligibility for external accounts.</p>
+        <p>
+          Give applications a credential-free, provider-isolated boundary for deciding whether an
+          existing external connection meets requested provider and scope requirements.
+        </p>
         <input id="search" class="search" type="search" placeholder="Search current view" />
         <nav aria-label="Documentation sections">
           <ul class="nav-list">
@@ -194,6 +197,26 @@
               <button class="nav-button" type="button" data-target="home" aria-current="page">
                 Home
                 <small>Overview, CLI, public API, diagrams</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/access/application/resolveConnectionAccessAsync.ts"
+              >
+                src/features/access/application/resolveConnectionAccessAsync.ts
+                <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/access/domain/evaluateConnectionAccess.ts"
+              >
+                src/features/access/domain/evaluateConnectionAccess.ts
+                <small>1 function</small>
               </button>
             </li>
           </ul>
@@ -204,9 +227,9 @@
           <section class="panel">
             <h2>Package overview</h2>
             <div class="summary">
-              <div><strong>1</strong><span class="muted">public exports</span></div>
+              <div><strong>6</strong><span class="muted">public exports</span></div>
               <div><strong>0</strong><span class="muted">components</span></div>
-              <div><strong>2</strong><span class="muted">modules</span></div>
+              <div><strong>5</strong><span class="muted">modules</span></div>
               <div><strong>1</strong><span class="muted">entrypoints</span></div>
             </div>
             <h3>Entrypoints</h3>
@@ -221,35 +244,367 @@
           </section>
           <section class="panel">
             <h2>Modules</h2>
-            <article class="item" data-search="src/index.test.ts">
+            <article
+              class="item"
+              data-search="src/features/access/application/resolveConnectionAccessAsync.ts src/features/access/domain/evaluateConnectionAccess.ts src/types/connection.ts resolveConnectionAccessAsync"
+            >
+              <h3>src/features/access/application/resolveConnectionAccessAsync.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/access/domain/evaluateConnectionAccess.ts</code>,
+                <code>src/types/connection.ts</code>
+              </p>
+              <p><strong>Exports:</strong> <code>resolveConnectionAccessAsync</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/access/domain/evaluateConnectionAccess.ts src/types/connection.ts evaluateConnectionAccess"
+            >
+              <h3>src/features/access/domain/evaluateConnectionAccess.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <code>src/types/connection.ts</code></p>
+              <p><strong>Exports:</strong> <code>evaluateConnectionAccess</code></p>
+            </article>
+            <article class="item" data-search="src/index.test.ts src/index.ts">
               <h3>src/index.test.ts</h3>
               <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+              <p><strong>Dependencies:</strong> <code>src/index.ts</code></p>
               <p><strong>Exports:</strong> <span class="empty">None</span></p>
             </article>
-            <article class="item" data-search="src/index.ts default">
+            <article
+              class="item"
+              data-search="src/index.ts ConnectionAccessDecision ConnectionDescriptor ConnectionRepositoryPort ConnectionRequirement evaluateConnectionAccess resolveConnectionAccessAsync"
+            >
               <h3>src/index.ts</h3>
               <p class="muted">Configured entrypoint</p>
               <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-              <p><strong>Exports:</strong> <code>default</code></p>
+              <p>
+                <strong>Exports:</strong> <code>ConnectionAccessDecision</code>,
+                <code>ConnectionDescriptor</code>, <code>ConnectionRepositoryPort</code>,
+                <code>ConnectionRequirement</code>, <code>evaluateConnectionAccess</code>,
+                <code>resolveConnectionAccessAsync</code>
+              </p>
+            </article>
+            <article
+              class="item"
+              data-search="src/types/connection.ts ConnectionAccessDecision ConnectionDescriptor ConnectionRepositoryPort ConnectionRequirement"
+            >
+              <h3>src/types/connection.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+              <p>
+                <strong>Exports:</strong> <code>ConnectionAccessDecision</code>,
+                <code>ConnectionDescriptor</code>, <code>ConnectionRepositoryPort</code>,
+                <code>ConnectionRequirement</code>
+              </p>
             </article>
           </section>
           <section class="panel">
             <h2>Public API</h2>
 
             <section>
-              <h3>src/index.ts</h3>
+              <h3>src/features/access/application/resolveConnectionAccessAsync.ts</h3>
               <article
                 class="item"
-                id="symbol-default"
-                data-search="default  unknown src/index.ts "
+                id="symbol-resolveconnectionaccessasync"
+                data-search="resolveConnectionAccessAsync  value src/features/access/application/resolveConnectionAccessAsync.ts Resolve connection metadata through a host port and evaluate requested access. ConnectionAccessDecision ConnectionRepositoryPort ConnectionRequirement (repository: ConnectionRepositoryPort, connectionId: string, requirement: ConnectionRequirement) =&gt; Promise&lt;ConnectionAccessDecision&gt;"
               >
-                <h4>default</h4>
+                <h4>resolveConnectionAccessAsync</h4>
 
-                <p class="muted">unknown • <code>src/index.ts:1:1</code></p>
+                <p class="muted">
+                  value •
+                  <code>src/features/access/application/resolveConnectionAccessAsync.ts:9:14</code>
+                </p>
+                <p>
+                  Resolve connection metadata through a host port and evaluate requested access.
+                </p>
+
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div>
+                  <strong>Related symbols:</strong>
+                  <ul class="chips">
+                    <li class="chip">ConnectionAccessDecision</li>
+                    <li class="chip">ConnectionRepositoryPort</li>
+                    <li class="chip">ConnectionRequirement</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Signature</h5>
+                  <pre>
+(repository: ConnectionRepositoryPort, connectionId: string, requirement: ConnectionRequirement) =&gt; Promise&lt;ConnectionAccessDecision&gt;</pre>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>connectionId</code></td>
+                        <td><code>string</code></td>
+                        <td>yes</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><code>repository</code></td>
+                        <td><code>ConnectionRepositoryPort</code></td>
+                        <td>yes</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><code>requirement</code></td>
+                        <td><code>ConnectionRequirement</code></td>
+                        <td>yes</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    <strong>Returns:</strong> <code>Promise&lt;ConnectionAccessDecision&gt;</code>
+                  </p>
+                </div>
+              </article>
+            </section>
+            <section>
+              <h3>src/features/access/domain/evaluateConnectionAccess.ts</h3>
+              <article
+                class="item"
+                id="symbol-evaluateconnectionaccess"
+                data-search="evaluateConnectionAccess  value src/features/access/domain/evaluateConnectionAccess.ts Evaluate an existing connection without fetching or exposing credentials. ConnectionAccessDecision ConnectionDescriptor ConnectionRequirement (connection: ConnectionDescriptor | null, requirement: ConnectionRequirement) =&gt; ConnectionAccessDecision"
+              >
+                <h4>evaluateConnectionAccess</h4>
+
+                <p class="muted">
+                  value • <code>src/features/access/domain/evaluateConnectionAccess.ts:8:14</code>
+                </p>
+                <p>Evaluate an existing connection without fetching or exposing credentials.</p>
+
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div>
+                  <strong>Related symbols:</strong>
+                  <ul class="chips">
+                    <li class="chip">ConnectionAccessDecision</li>
+                    <li class="chip">ConnectionDescriptor</li>
+                    <li class="chip">ConnectionRequirement</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Signature</h5>
+                  <pre>
+(connection: ConnectionDescriptor | null, requirement: ConnectionRequirement) =&gt; ConnectionAccessDecision</pre>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>connection</code></td>
+                        <td><code>ConnectionDescriptor | null</code></td>
+                        <td>yes</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><code>requirement</code></td>
+                        <td><code>ConnectionRequirement</code></td>
+                        <td>yes</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><strong>Returns:</strong> <code>ConnectionAccessDecision</code></p>
+                </div>
+              </article>
+            </section>
+            <section>
+              <h3>src/types/connection.ts</h3>
+              <article
+                class="item"
+                id="symbol-connectionaccessdecision"
+                data-search="ConnectionAccessDecision  unknown src/types/connection.ts A fail-closed eligibility result; it does not itself authorize a provider API call."
+              >
+                <h4>ConnectionAccessDecision</h4>
+
+                <p class="muted">unknown • <code>src/types/connection.ts:19:1</code></p>
+                <p>
+                  A fail-closed eligibility result; it does not itself authorize a provider API
+                  call.
+                </p>
 
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
                 <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+              </article>
+              <article
+                class="item"
+                id="symbol-connectiondescriptor"
+                data-search="ConnectionDescriptor  type src/types/connection.ts A credential-free view of an account linked through an external authorization owner."
+              >
+                <h4>ConnectionDescriptor</h4>
+
+                <p class="muted">type • <code>src/types/connection.ts:2:1</code></p>
+                <p>
+                  A credential-free view of an account linked through an external authorization
+                  owner.
+                </p>
+
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Member</th>
+                      <th>Kind</th>
+                      <th>Type</th>
+                      <th>Required</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>accountId</code></td>
+                      <td>property</td>
+                      <td><code>string</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>authorizationRef</code></td>
+                      <td>property</td>
+                      <td><code>string</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>id</code></td>
+                      <td>property</td>
+                      <td><code>string</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>provider</code></td>
+                      <td>property</td>
+                      <td><code>string</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>scopes</code></td>
+                      <td>property</td>
+                      <td><code>readonly string[]</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>status</code></td>
+                      <td>property</td>
+                      <td>
+                        <code
+                          >&quot;connected&quot; | &quot;disconnected&quot; | &quot;expired&quot; |
+                          &quot;revoked&quot;</code
+                        >
+                      </td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+              <article
+                class="item"
+                id="symbol-connectionrepositoryport"
+                data-search="ConnectionRepositoryPort  type src/types/connection.ts Host-owned, read-only persistence boundary; credentials stay outside this package. ConnectionDescriptor"
+              >
+                <h4>ConnectionRepositoryPort</h4>
+
+                <p class="muted">type • <code>src/types/connection.ts:33:1</code></p>
+                <p>
+                  Host-owned, read-only persistence boundary; credentials stay outside this package.
+                </p>
+
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div>
+                  <strong>Related symbols:</strong>
+                  <ul class="chips">
+                    <li class="chip">ConnectionDescriptor</li>
+                  </ul>
+                </div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Member</th>
+                      <th>Kind</th>
+                      <th>Type</th>
+                      <th>Required</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>loadAsync</code></td>
+                      <td>property</td>
+                      <td>
+                        <code
+                          >(connectionId: string) =&gt; Promise&lt;ConnectionDescriptor |
+                          null&gt;</code
+                        >
+                      </td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+              <article
+                class="item"
+                id="symbol-connectionrequirement"
+                data-search="ConnectionRequirement  type src/types/connection.ts Requirements for using an existing external connection."
+              >
+                <h4>ConnectionRequirement</h4>
+
+                <p class="muted">type • <code>src/types/connection.ts:13:1</code></p>
+                <p>Requirements for using an existing external connection.</p>
+
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Member</th>
+                      <th>Kind</th>
+                      <th>Type</th>
+                      <th>Required</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>provider</code></td>
+                      <td>property</td>
+                      <td><code>string</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>scopes</code></td>
+                      <td>property</td>
+                      <td><code>readonly string[]</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
               </article>
             </section>
           </section>
@@ -269,9 +624,24 @@
                 graph TD package__ankhorage_connection[&quot;@ankhorage/connection&quot;]
                 entrypoint_src_index_ts[&quot;src/index.ts&quot;] package__ankhorage_connection
                 --&gt; entrypoint_src_index_ts
+                module_src_features_access_application_resolveConnectionAccessAsync_ts[&quot;src/features/access/application/resolveConnectionAccessAsync.ts&quot;]
+                package__ankhorage_connection -.-&gt;
+                module_src_features_access_application_resolveConnectionAccessAsync_ts
+                module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt;
+                module_src_features_access_domain_evaluateConnectionAccess_ts
+                module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt;
+                module_src_types_connection_ts
+                module_src_features_access_domain_evaluateConnectionAccess_ts[&quot;src/features/access/domain/evaluateConnectionAccess.ts&quot;]
+                package__ankhorage_connection -.-&gt;
+                module_src_features_access_domain_evaluateConnectionAccess_ts
+                module_src_features_access_domain_evaluateConnectionAccess_ts --&gt;
+                module_src_types_connection_ts
                 module_src_index_test_ts[&quot;src/index.test.ts&quot;]
                 package__ankhorage_connection -.-&gt; module_src_index_test_ts
+                module_src_index_test_ts --&gt; module_src_index_ts
                 module_src_index_ts[&quot;src/index.ts&quot;]
+                module_src_types_connection_ts[&quot;src/types/connection.ts&quot;]
+                package__ankhorage_connection -.-&gt; module_src_types_connection_ts
               </div>
               <details>
                 <summary>View Mermaid source</summary>
@@ -280,9 +650,19 @@ graph TD
   package__ankhorage_connection[&quot;@ankhorage/connection&quot;]
   entrypoint_src_index_ts[&quot;src/index.ts&quot;]
   package__ankhorage_connection --&gt; entrypoint_src_index_ts
+  module_src_features_access_application_resolveConnectionAccessAsync_ts[&quot;src/features/access/application/resolveConnectionAccessAsync.ts&quot;]
+  package__ankhorage_connection -.-&gt; module_src_features_access_application_resolveConnectionAccessAsync_ts
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt; module_src_features_access_domain_evaluateConnectionAccess_ts
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt; module_src_types_connection_ts
+  module_src_features_access_domain_evaluateConnectionAccess_ts[&quot;src/features/access/domain/evaluateConnectionAccess.ts&quot;]
+  package__ankhorage_connection -.-&gt; module_src_features_access_domain_evaluateConnectionAccess_ts
+  module_src_features_access_domain_evaluateConnectionAccess_ts --&gt; module_src_types_connection_ts
   module_src_index_test_ts[&quot;src/index.test.ts&quot;]
   package__ankhorage_connection -.-&gt; module_src_index_test_ts
+  module_src_index_test_ts --&gt; module_src_index_ts
   module_src_index_ts[&quot;src/index.ts&quot;]
+  module_src_types_connection_ts[&quot;src/types/connection.ts&quot;]
+  package__ankhorage_connection -.-&gt; module_src_types_connection_ts
 </pre>
               </details>
             </article>
@@ -293,17 +673,32 @@ graph TD
               <h3>Module relationships</h3>
               <p class="muted"><code>diagrams/module-relationships.mmd</code></p>
               <div class="mermaid">
-                graph LR module_src_index_test_ts[&quot;src/index.test.ts&quot;]
-                module_src_index_ts[&quot;src/index.ts&quot;] module_src_index_test_ts -.-&gt;
-                module_src_index_ts
+                graph LR
+                module_src_features_access_application_resolveConnectionAccessAsync_ts[&quot;src/features/access/application/resolveConnectionAccessAsync.ts&quot;]
+                module_src_features_access_domain_evaluateConnectionAccess_ts[&quot;src/features/access/domain/evaluateConnectionAccess.ts&quot;]
+                module_src_index_test_ts[&quot;src/index.test.ts&quot;]
+                module_src_index_ts[&quot;src/index.ts&quot;]
+                module_src_types_connection_ts[&quot;src/types/connection.ts&quot;]
+                module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt;
+                module_src_features_access_domain_evaluateConnectionAccess_ts
+                module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt;
+                module_src_types_connection_ts
+                module_src_features_access_domain_evaluateConnectionAccess_ts --&gt;
+                module_src_types_connection_ts module_src_index_test_ts --&gt; module_src_index_ts
               </div>
               <details>
                 <summary>View Mermaid source</summary>
                 <pre>
 graph LR
+  module_src_features_access_application_resolveConnectionAccessAsync_ts[&quot;src/features/access/application/resolveConnectionAccessAsync.ts&quot;]
+  module_src_features_access_domain_evaluateConnectionAccess_ts[&quot;src/features/access/domain/evaluateConnectionAccess.ts&quot;]
   module_src_index_test_ts[&quot;src/index.test.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
-  module_src_index_test_ts -.-&gt; module_src_index_ts
+  module_src_types_connection_ts[&quot;src/types/connection.ts&quot;]
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt; module_src_features_access_domain_evaluateConnectionAccess_ts
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt; module_src_types_connection_ts
+  module_src_features_access_domain_evaluateConnectionAccess_ts --&gt; module_src_types_connection_ts
+  module_src_index_test_ts --&gt; module_src_index_ts
 </pre>
               </details>
             </article>
@@ -311,18 +706,95 @@ graph LR
               <h3>Export graph</h3>
               <p class="muted"><code>diagrams/export-graph.mmd</code></p>
               <div class="mermaid">
-                graph LR module_src_index_test_ts[&quot;src/index.test.ts&quot;]
-                module_src_index_ts[&quot;src/index.ts&quot;] export_default[&quot;default&quot;]
-                module_src_index_ts --&gt; export_default
+                graph LR
+                module_src_features_access_application_resolveConnectionAccessAsync_ts[&quot;src/features/access/application/resolveConnectionAccessAsync.ts&quot;]
+                module_src_features_access_domain_evaluateConnectionAccess_ts[&quot;src/features/access/domain/evaluateConnectionAccess.ts&quot;]
+                module_src_index_test_ts[&quot;src/index.test.ts&quot;]
+                module_src_index_ts[&quot;src/index.ts&quot;]
+                module_src_types_connection_ts[&quot;src/types/connection.ts&quot;]
+                export_ConnectionAccessDecision[&quot;ConnectionAccessDecision&quot;]
+                module_src_types_connection_ts --&gt; export_ConnectionAccessDecision
+                export_ConnectionDescriptor[&quot;ConnectionDescriptor&quot;]
+                module_src_types_connection_ts --&gt; export_ConnectionDescriptor
+                export_ConnectionRepositoryPort[&quot;ConnectionRepositoryPort&quot;]
+                module_src_types_connection_ts --&gt; export_ConnectionRepositoryPort
+                export_ConnectionRepositoryPort -.-&gt; export_ConnectionDescriptor
+                export_ConnectionRequirement[&quot;ConnectionRequirement&quot;]
+                module_src_types_connection_ts --&gt; export_ConnectionRequirement
+                export_evaluateConnectionAccess[&quot;evaluateConnectionAccess&quot;]
+                module_src_features_access_domain_evaluateConnectionAccess_ts --&gt;
+                export_evaluateConnectionAccess export_evaluateConnectionAccess -.-&gt;
+                export_ConnectionAccessDecision export_evaluateConnectionAccess -.-&gt;
+                export_ConnectionDescriptor export_evaluateConnectionAccess -.-&gt;
+                export_ConnectionRequirement
+                export_resolveConnectionAccessAsync[&quot;resolveConnectionAccessAsync&quot;]
+                module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt;
+                export_resolveConnectionAccessAsync export_resolveConnectionAccessAsync -.-&gt;
+                export_ConnectionAccessDecision export_resolveConnectionAccessAsync -.-&gt;
+                export_ConnectionRepositoryPort export_resolveConnectionAccessAsync -.-&gt;
+                export_ConnectionRequirement
               </div>
               <details>
                 <summary>View Mermaid source</summary>
                 <pre>
 graph LR
+  module_src_features_access_application_resolveConnectionAccessAsync_ts[&quot;src/features/access/application/resolveConnectionAccessAsync.ts&quot;]
+  module_src_features_access_domain_evaluateConnectionAccess_ts[&quot;src/features/access/domain/evaluateConnectionAccess.ts&quot;]
   module_src_index_test_ts[&quot;src/index.test.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
-  export_default[&quot;default&quot;]
-  module_src_index_ts --&gt; export_default
+  module_src_types_connection_ts[&quot;src/types/connection.ts&quot;]
+  export_ConnectionAccessDecision[&quot;ConnectionAccessDecision&quot;]
+  module_src_types_connection_ts --&gt; export_ConnectionAccessDecision
+  export_ConnectionDescriptor[&quot;ConnectionDescriptor&quot;]
+  module_src_types_connection_ts --&gt; export_ConnectionDescriptor
+  export_ConnectionRepositoryPort[&quot;ConnectionRepositoryPort&quot;]
+  module_src_types_connection_ts --&gt; export_ConnectionRepositoryPort
+  export_ConnectionRepositoryPort -.-&gt; export_ConnectionDescriptor
+  export_ConnectionRequirement[&quot;ConnectionRequirement&quot;]
+  module_src_types_connection_ts --&gt; export_ConnectionRequirement
+  export_evaluateConnectionAccess[&quot;evaluateConnectionAccess&quot;]
+  module_src_features_access_domain_evaluateConnectionAccess_ts --&gt; export_evaluateConnectionAccess
+  export_evaluateConnectionAccess -.-&gt; export_ConnectionAccessDecision
+  export_evaluateConnectionAccess -.-&gt; export_ConnectionDescriptor
+  export_evaluateConnectionAccess -.-&gt; export_ConnectionRequirement
+  export_resolveConnectionAccessAsync[&quot;resolveConnectionAccessAsync&quot;]
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --&gt; export_resolveConnectionAccessAsync
+  export_resolveConnectionAccessAsync -.-&gt; export_ConnectionAccessDecision
+  export_resolveConnectionAccessAsync -.-&gt; export_ConnectionRepositoryPort
+  export_resolveConnectionAccessAsync -.-&gt; export_ConnectionRequirement
+</pre>
+              </details>
+            </article>
+            <article
+              class="item"
+              data-search="resolveConnectionAccessAsync sequence diagrams/sequences/resolve-connection-access-async.mmd"
+            >
+              <h3>resolveConnectionAccessAsync sequence</h3>
+              <p class="muted">
+                <code>diagrams/sequences/resolve-connection-access-async.mmd</code>
+              </p>
+              <div class="mermaid">
+                sequenceDiagram participant participant_evaluateConnectionAccess as
+                evaluateConnectionAccess participant participant_loadAsync as loadAsync participant
+                participant_resolveConnectionAccessAsync as resolveConnectionAccessAsync
+                participant_resolveConnectionAccessAsync-&gt;&gt;participant_evaluateConnectionAccess:
+                evaluateConnectionAccess()
+                participant_evaluateConnectionAccess--&gt;&gt;participant_resolveConnectionAccessAsync:
+                return participant_resolveConnectionAccessAsync-&gt;&gt;participant_loadAsync:
+                repository.loadAsync()
+                participant_loadAsync--&gt;&gt;participant_resolveConnectionAccessAsync: return
+              </div>
+              <details>
+                <summary>View Mermaid source</summary>
+                <pre>
+sequenceDiagram
+  participant participant_evaluateConnectionAccess as evaluateConnectionAccess
+  participant participant_loadAsync as loadAsync
+  participant participant_resolveConnectionAccessAsync as resolveConnectionAccessAsync
+  participant_resolveConnectionAccessAsync-&gt;&gt;participant_evaluateConnectionAccess: evaluateConnectionAccess()
+  participant_evaluateConnectionAccess--&gt;&gt;participant_resolveConnectionAccessAsync: return
+  participant_resolveConnectionAccessAsync-&gt;&gt;participant_loadAsync: repository.loadAsync()
+  participant_loadAsync--&gt;&gt;participant_resolveConnectionAccessAsync: return
 </pre>
               </details>
             </article>
@@ -331,6 +803,46 @@ graph LR
             <h2>Donation</h2>
             <p>If this project is useful to you, you can support its continued development.</p>
             <p><a href="https://github.com/sponsors/ankhorage">Support @ankhorage</a></p>
+          </section>
+        </section>
+        <section
+          id="view-src-features-access-application-resolveconnectionaccessasync-ts"
+          class="view"
+          data-view="src/features/access/application/resolveConnectionAccessAsync.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/access/application/resolveConnectionAccessAsync.ts</h2>
+            <article
+              class="item"
+              data-search="resolveConnectionAccessAsync src/features/access/application/resolveConnectionAccessAsync.ts Resolve connection metadata through a host port and evaluate requested access."
+            >
+              <h3>resolveConnectionAccessAsync</h3>
+              <p class="muted">
+                <code>src/features/access/application/resolveConnectionAccessAsync.ts:9:14</code>
+              </p>
+              <p>Resolve connection metadata through a host port and evaluate requested access.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-access-domain-evaluateconnectionaccess-ts"
+          class="view"
+          data-view="src/features/access/domain/evaluateConnectionAccess.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/access/domain/evaluateConnectionAccess.ts</h2>
+            <article
+              class="item"
+              data-search="evaluateConnectionAccess src/features/access/domain/evaluateConnectionAccess.ts Evaluate an existing connection without fetching or exposing credentials."
+            >
+              <h3>evaluateConnectionAccess</h3>
+              <p class="muted">
+                <code>src/features/access/domain/evaluateConnectionAccess.ts:8:14</code>
+              </p>
+              <p>Evaluate an existing connection without fetching or exposing credentials.</p>
+            </article>
           </section>
         </section>
       </main>

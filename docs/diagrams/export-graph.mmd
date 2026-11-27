@@ -1,5 +1,25 @@
 graph LR
+  module_src_features_access_application_resolveConnectionAccessAsync_ts["src/features/access/application/resolveConnectionAccessAsync.ts"]
+  module_src_features_access_domain_evaluateConnectionAccess_ts["src/features/access/domain/evaluateConnectionAccess.ts"]
   module_src_index_test_ts["src/index.test.ts"]
   module_src_index_ts["src/index.ts"]
-  export_default["default"]
-  module_src_index_ts --> export_default
+  module_src_types_connection_ts["src/types/connection.ts"]
+  export_ConnectionAccessDecision["ConnectionAccessDecision"]
+  module_src_types_connection_ts --> export_ConnectionAccessDecision
+  export_ConnectionDescriptor["ConnectionDescriptor"]
+  module_src_types_connection_ts --> export_ConnectionDescriptor
+  export_ConnectionRepositoryPort["ConnectionRepositoryPort"]
+  module_src_types_connection_ts --> export_ConnectionRepositoryPort
+  export_ConnectionRepositoryPort -.-> export_ConnectionDescriptor
+  export_ConnectionRequirement["ConnectionRequirement"]
+  module_src_types_connection_ts --> export_ConnectionRequirement
+  export_evaluateConnectionAccess["evaluateConnectionAccess"]
+  module_src_features_access_domain_evaluateConnectionAccess_ts --> export_evaluateConnectionAccess
+  export_evaluateConnectionAccess -.-> export_ConnectionAccessDecision
+  export_evaluateConnectionAccess -.-> export_ConnectionDescriptor
+  export_evaluateConnectionAccess -.-> export_ConnectionRequirement
+  export_resolveConnectionAccessAsync["resolveConnectionAccessAsync"]
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --> export_resolveConnectionAccessAsync
+  export_resolveConnectionAccessAsync -.-> export_ConnectionAccessDecision
+  export_resolveConnectionAccessAsync -.-> export_ConnectionRepositoryPort
+  export_resolveConnectionAccessAsync -.-> export_ConnectionRequirement

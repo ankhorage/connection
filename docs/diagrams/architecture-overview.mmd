@@ -2,6 +2,16 @@ graph TD
   package__ankhorage_connection["@ankhorage/connection"]
   entrypoint_src_index_ts["src/index.ts"]
   package__ankhorage_connection --> entrypoint_src_index_ts
+  module_src_features_access_application_resolveConnectionAccessAsync_ts["src/features/access/application/resolveConnectionAccessAsync.ts"]
+  package__ankhorage_connection -.-> module_src_features_access_application_resolveConnectionAccessAsync_ts
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --> module_src_features_access_domain_evaluateConnectionAccess_ts
+  module_src_features_access_application_resolveConnectionAccessAsync_ts --> module_src_types_connection_ts
+  module_src_features_access_domain_evaluateConnectionAccess_ts["src/features/access/domain/evaluateConnectionAccess.ts"]
+  package__ankhorage_connection -.-> module_src_features_access_domain_evaluateConnectionAccess_ts
+  module_src_features_access_domain_evaluateConnectionAccess_ts --> module_src_types_connection_ts
   module_src_index_test_ts["src/index.test.ts"]
   package__ankhorage_connection -.-> module_src_index_test_ts
+  module_src_index_test_ts --> module_src_index_ts
   module_src_index_ts["src/index.ts"]
+  module_src_types_connection_ts["src/types/connection.ts"]
+  package__ankhorage_connection -.-> module_src_types_connection_ts
