@@ -1,7 +1,7 @@
 {
   "name": "@ankhorage/connection",
   "version": "0.0.0",
-  "description": "todo",
+  "description": "Provider-neutral connection metadata and access eligibility for external accounts.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,8 @@
   },
   "keywords": [
     "ankhorage",
-    "adapter"
+    "connection",
+    "authorization"
   ],
   "files": [
     "dist",
@@ -53,7 +54,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@ankhorage/devtools": "^2.10.13",
+    "@ankhorage/devtools": "^2.12.2",
     "@ankhorage/paradox": "^0.6.0",
     "@types/bun": "^1.4.5",
     "@types/node": "^26.6.6",
